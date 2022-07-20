@@ -175,5 +175,5 @@ django_heroku.settings(locals(),staticfiles=False)
 
 
 # Production Checker
-# if os.getcwd() == '/app':
-#     DEBUG = False
+if os.getcwd() == '/app':
+    DEBUG = False
