@@ -21,5 +21,5 @@ Steps:
 ## Database Schema of Project
 <img src="MVC.png" width="500px">
 
-# Check The Project link | Offical website link
-#### [link](https://djshort.herokuapp.com/)
+# Check The Project link | [Offical website link](https://djshort.herokuapp.com/)
+  ## [LINK](https://djshort.herokuapp.com/)
