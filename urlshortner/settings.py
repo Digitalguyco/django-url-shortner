@@ -175,5 +175,5 @@ django_heroku.settings(locals())
 
 
 # Production Checker
-# if os.getcwd() == '/app':
-#     DEBUG = True
+if os.getcwd() == '/app':
+    DEBUG = False
