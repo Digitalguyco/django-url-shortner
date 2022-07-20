@@ -5,7 +5,7 @@ A Functional Django Web App
 
 # Set up
 Steps:
--> These steps are explained [here](https://youtu.be/djNrEft8d_I)
+
 1. Clone/pull/download this repository
 2. Create a virtualenv with `python -m venv env`
 3. Activate virtual environment `source env/bin/activate`
@@ -22,4 +22,4 @@ Steps:
 <img src="MVC.png" width="500px">
 
 # Check The Project link | Offical website link
-#### [link]([https://youtu.be/djNrEft8d_I)](https://djshort.herokuapp.com/)
+#### [link](https://djshort.herokuapp.com/)
