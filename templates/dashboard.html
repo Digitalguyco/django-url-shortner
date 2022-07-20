@@ -1,0 +1,85 @@
+<!-- Extending base.html -->
+{% extends 'base.html' %}
+{% block title %}App{%endblock%}
+{%block navbar%}
+    <!-- Navigation-->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top shadow-sm" id="mainNav">
+        <div class="container px-5">
+            <a class="navbar-brand fw-bold" href="{%url 'index'%}">UrlShort</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                Menu
+                <i class="bi-list"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ms-auto me-4 my-3 my-lg-0">
+                {%if request.user.is_authenticated %}
+                <li class="nav-item"><a class="nav-link me-lg-3" href="{% url 'signout' %}">Logout</a></li>
+                {% endif%} 
+                </ul>
+                
+                <a class="btn btn-primary rounded-pill px-3 mb-2 mb-lg-0" href="{%url 'links'%}">
+                    <span class="d-flex align-items-center">
+                        <i class="bi-chat-text-fill me-2"></i>
+                        <span class="small">Links</span>
+                    </span>
+                </a>
+            </div>
+        </div>
+    </nav>
+    {% endblock %}
+{% block content %}
+<div class="wrapper">
+    <div class="logo">
+        <img src="https://static.vecteezy.com/system/resources/previews/004/996/790/original/robot-chatbot-icon-sign-free-vector.jpg" alt="">
+    </div>
+    <div class="text-center mt-4 name">
+        Create new link
+    </div>
+    <form class="p-3 mt-3"  id="post-form">
+        {% csrf_token %}
+        <div class="form-field d-flex align-items-center">
+            <span class="far fa-user"></span>
+            <input type="text" name="link" id="link" placeholder="Enter URL here">
+        </div>
+        <div class="form-field d-flex align-items-center">
+            <!-- <span class="far fa-user"> Your Shortened Url </span> -->
+            <h5> </h5>
+        </div>
+        
+           
+       
+        
+        <button class="btn mt-3">Shorten</button>
+        
+    </form>
+    
+</div>
+<script type="text/javascript">
+    $(document).on('submit','#post-form',function(e){
+     //  prevent Reload
+      e.preventDefault(); 
+    //   Get link
+      let link = $('#link').val();
+      let main_link;
+    //   a little code to clean up link if it has 'https://'  but its best to submit in 'www.link.com' format
+    //   check if the link entered has https in it
+      let checker = link.startsWith('https')
+    //   removes the https
+      main_link = (checker)? link.substring(8):link 
+        
+        
+        //  gets entered link and returns shortened link
+      $.ajax({
+        type:'POST',
+        url:'{% url "create" %}',
+        data:{
+          link:main_link,
+          csrfmiddlewaretoken:$('input[name=csrfmiddlewaretoken]').val(),
+        },
+        success: function(data){
+          $('h5').html("http://127.0.0.1:8000/"+data) 
+        }
+      });
+    });
+  </script>
+{% endblock %}
