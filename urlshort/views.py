@@ -6,6 +6,7 @@ from django.contrib.auth.models import User
 from .models import Url
 from django.http import HttpResponse
 from django.contrib.auth.decorators import login_required
+# creat hashed password with make_password
 from django.contrib.auth.hashers import make_password
 
 # Create your views here.
