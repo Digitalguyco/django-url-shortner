@@ -6,6 +6,7 @@ from django.contrib.auth.models import User
 from .models import Url
 from django.http import HttpResponse
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.hashers import make_password
 
 # Create your views here.
 
@@ -20,6 +21,7 @@ def index(request):
 def signup(request):
     if request.user.is_authenticated: # check if user is authenticated
         return redirect('/app/') 
+    
      
     if request.method == 'POST':
         # Get Posted Informations
@@ -28,7 +30,7 @@ def signup(request):
         password = request.POST['password']
         new_user = User.objects.create(
             email = email,
-            password = password,
+            password = make_password(password),
             username= username
         ) # Create a new User
         new_user.save() # Save to Database
