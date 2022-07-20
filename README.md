@@ -23,3 +23,16 @@ Steps:
 
 # Check The Project link | [Offical website link](https://djshort.herokuapp.com/)
   ## [LINK](https://djshort.herokuapp.com/)
+
+
+## Note
+1. This project hasn't been connected to a domain yet, it runs on heroku
+2. This project is for my portfolio use only 
+3. You can clone and use this project for eductional purposes
+4. Functionalities such as allauth login, links statistics and more would be added in the near future(or not :) )
+
+## Contact me
+ ### Youngkhito@gmail.com
+ ### Website and Social links coming soon.
+ 
+ 
