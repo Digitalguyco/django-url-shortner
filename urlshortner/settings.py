@@ -176,4 +176,6 @@ django_heroku.settings(locals(),staticfiles=False)
 
 # Production Checker
 if os.getcwd() == '/app':
+    SECURE_PROXY_SSL_HEADER = ('HTTP_ X_ FORWARDED_PROTO', 'https')
+    SECURE_SSL_REDIRECT = True
     DEBUG = False
