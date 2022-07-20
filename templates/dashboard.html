@@ -68,7 +68,7 @@
       main_link = (checker)? link.substring(8):link 
         
         
-        //  gets entered link and returns shortened link
+        //  gets entered link and returns shortened 
       $.ajax({
         type:'POST',
         url:'{% url "create" %}',
@@ -77,7 +77,7 @@
           csrfmiddlewaretoken:$('input[name=csrfmiddlewaretoken]').val(),
         },
         success: function(data){
-          $('h5').html("http://127.0.0.1:8000/"+data) 
+          $('h5').html("djshort.herokuapp.com/"+data) 
         }
       });
     });
