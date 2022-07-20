@@ -18,8 +18,8 @@ Steps:
 ### Finally runserver
 `python manage.py runserver`
 
-## Database Schema of Project
-<img src="MVC.png" width="500px">
+##  Project Snapshot
+<img src="app.png" width="500px">
 
 # Check The Project link | [Offical website link](https://djshort.herokuapp.com/)
   ## [LINK](https://djshort.herokuapp.com/)
